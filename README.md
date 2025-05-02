@@ -1,31 +1,5 @@
 # My-project
-Interactive dashboard for monthly sales data to improve KPI visibility and insights
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PieChart, Pie, Cell, Legend, ResponsiveContainer, Tooltip } from 'recharts';
-import { SalesByCategory } from '@/services/salesData';
 
-interface CategoryChartProps {
-  data: SalesByCategory[];
-}
-
-const COLORS = ['#2D7DD2', '#45B7D1', '#26C485', '#F58A07', '#F45B69'];
-
-const formatCurrency = (value: number) => {
-  return `$${value.toLocaleString()}`;
-};
-
-const CategoryChart = ({ data }: CategoryChartProps) => {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Sales by Category</CardTitle>
-      </CardHeader>
-      <CardContent className="h-[300px]">
-        <ResponsiveContainer width="100%" height="100%">
-          <PieChart>
-            <Pie
-              data={data}
               cx="50%"
               cy="50%"
               labelLine={false}
